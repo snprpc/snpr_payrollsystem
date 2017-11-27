@@ -14,15 +14,7 @@
           <section class="addtable">
 
 
-            @if (count($errors) > 0)
-              <div class="alert alert-danger">
-                <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-                </ul>
-              </div>
-            @endif
+  
             <div class="form-group has-feedback form-inline">
               <label for="ebirth">姓&nbsp;&nbsp;&nbsp;名&nbsp;&nbsp;&nbsp;</label>
                 <div class="input-group">

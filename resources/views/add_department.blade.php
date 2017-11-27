@@ -14,15 +14,6 @@
       <section>
         <div class="addform">
 
-        @if (count($errors) > 0)
-          <div class="alert alert-danger">
-            <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-            </ul>
-          </div>
-        @endif
         <div class="form-group has-feedback form-inline">
           <label for="dep_name">&nbsp;部&nbsp;门&nbsp;名&nbsp;</label>
             <div class="input-group">

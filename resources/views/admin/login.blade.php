@@ -15,15 +15,7 @@
         <h5>登录</h5>
       </div>
       <div class="panel-body">
-      @if (count($errors) > 0)
-        <div class="alert alert-danger">
-          <ul>
-          @foreach ($errors->all() as $error)
-              <li>{{ $error }}</li>
-          @endforeach
-          </ul>
-        </div>
-      @endif
+
 
       <form class="form-group" role="form" action="{{ route('admin.store') }}" method="POST">
         {{ csrf_field() }}
