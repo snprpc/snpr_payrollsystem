@@ -1,0 +1,15 @@
+.container{
+
+  margin: 0 auto;
+  //background: url('/pic/login_background.jpg') no-repeat center;;
+}
+.login-win{
+  width: auto;
+  height: auto;
+}
+.checkbox{
+  margin: 0px,30px;
+}
+.btn-login{
+  margin: 0px,30px;
+}
