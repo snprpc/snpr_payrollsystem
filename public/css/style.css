@@ -2260,6 +2260,10 @@ label {
 }
 .save{
   float: right;
-  margin-right: 200px;
+  margin-top: 10px;
+  margin-right: 190px;
   width: 310px
+}
+.employee-ifo{
+  width: 950px;
 }

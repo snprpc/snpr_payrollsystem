@@ -16,8 +16,9 @@ Route::resource('snprpc/payrollsystem/admin', 'AdminController');
 
 Route::get('snprpc/payrollsystem/admin/{id}/addemployee', 'EmployeeController@addIndex')->name('add_employee');
 Route::get('snprpc/payrollsystem/admin/{id}/storeemployee', 'EmployeeController@store')->name('store_employee');
-
-
+Route::get('snprpc/payrollsystem/admin/{id}/adddirector', 'EmployeeController@addDirector')->name('add_director');
+Route::get('snprpc/payrollsystem/admin/{id}/searchemployee', 'EmployeeController@searchByDid')->name('search_employee');
+Route::get('snprpc/payrollsystem/admin/{id}/addtodir', 'EmployeeController@addEmpToDir');
 Route::get('snprpc/payrollsystem/admin/{id}/adddepartment', 'DepartmentController@addIndex')->name('add_department');
 
 Route::get('snprpc/payrollsystem/admin/{id}/storedepartment', 'DepartmentController@store')->name('store_department');

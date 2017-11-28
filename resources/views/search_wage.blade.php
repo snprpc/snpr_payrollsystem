@@ -32,8 +32,6 @@
               </a>
           </li>
           @endif
-
-
         </ul>
 <div id="myTabContent" class="tab-content">
   @if (isset($paymethod))

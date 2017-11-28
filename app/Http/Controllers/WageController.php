@@ -133,10 +133,16 @@ class WageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        echo $id;
-        print_r($request->all());
-        //return redirect()->route('show_wage', [1]);
+        // print_r($request->all());
+        // echo $request->wpay;
+        $wages = \App\Model\Wage::where('wid',$id)
+          ->update(['wpay'=>$request->wpay],
+                   ['wallowance',$request->wallowance],
+                   ['wovertime',$request->wovertime],
+                   ['wwithholding',$request->wwithholding]);
+
+
+        return redirect()->route('show_wage', ['id' => 1]);
     }
     public function search () {
 

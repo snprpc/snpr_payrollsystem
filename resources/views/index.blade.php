@@ -34,9 +34,9 @@
                         <span>资料录入</span>
                     </a>
                     <ul class="sub">
+                      <li><a  href="#" onclick="addDepartment({{$admin->aid}})">部门资料</a></li>
                         <li><a  href="#" onclick="addEmployee({{$admin->aid}})">员工资料</a></li>
-                        <li><a  href="#" onclick="addDepartment({{$admin->aid}})">部门资料</a></li>
-                        <li><a  href="#" onclick="addDepartment({{$admin->aid}})">主管任命</a></li>
+                        <li><a  href="#" onclick="addDirector({{$admin->aid}})">主管任命</a></li>
                     </ul>
                 </li>
                 <li class="sub-menu">

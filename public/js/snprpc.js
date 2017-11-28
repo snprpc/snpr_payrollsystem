@@ -42,10 +42,12 @@ function saveEmployee ()
   var epicture = $(" #epicture ").val();
   var ephone = $(" #ephone ").val();
   var eaccout =  $(" #eaccout ").val();
+  var dep_name =  $(" #dep_name ").val();
   $.confirm({
       title: '确认员工信息!',
       content: '姓名：'+ename+'<br>'+'手机号：'+ephone+'<br>'+'性别：'+esex_str+'<br>'
-        +'出生年月：'+ebirth+'<br>'+'籍贯：'+eplace+'<br>'+'名族：'+enation+'<br>'+'政治面貌：'+estatus+'<br>'+'账户：'+eaccout,
+        +'出生年月：'+ebirth+'<br>'+'籍贯：'+eplace+'<br>'+'名族：'+enation+'<br>'+'政治面貌：'
+        +estatus+'<br>'+'账户：'+eaccout+'<br>'+'所属部门:'+dep_name,
       confirm: function(){
         $.ajax({
           url:host+"1/storeemployee",
@@ -60,6 +62,9 @@ function saveEmployee ()
           success:function(data){
             //  console.log(data);
                $('.jumbotron').html(data);
+          },
+          complete:function(data){
+            $.alert('添加成功!');
           }
         })
       },
@@ -135,6 +140,9 @@ function saveDepartment ()
           success:function(data){
               console.log(data);
                $('.jumbotron').html(data);
+          },
+          complete:function(data){
+            $.alert('添加成功!');
           }
         })
       },
@@ -160,6 +168,83 @@ function saveDepartment ()
         })
       }
   });
+}
+function addDirector(id)
+{
+  var host = "/snprpc/payrollsystem/admin/";
+  $.ajax({
+    url:host+id+"/adddirector",
+    //data:id,
+    type:'GET', //GET
+    headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
+    dataType:'html',    //返回的数据格式：json/xml/html/script/jsonp/text
+
+    success:function(data){
+        // console.log(data);
+         $('.jumbotron').html(data);
+    }
+  })
+}
+function searchEmployee (dep_id)
+{
+  var host = "/snprpc/payrollsystem/admin/";
+  $.ajax({
+    url:host+"1/searchemployee",
+    data:{"dep_id":dep_id},
+    type:'GET', //GET
+    headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
+    dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+    success:function(data){
+      console.log(data.length);
+      console.log(data);
+      $("#employee").html("");
+      if(data.length == 0){
+
+      }else{
+       //  console.log(data);
+        var sex = "男";
+
+        for(var i=0,l=data.length;i<l;i++){
+           console.log(data[i]['ename']);
+           var sex
+           if(data[i]['esex'] == "female"){
+              sex="女";
+           }
+
+           var nameEmplement =
+           '<div class="text-info col-sm-10"><table class="table table-hover" style="width:1050px;"><thead><tr><th>姓名</th><th>性别</th><th>联系方式</th><th>出生年月</th><th>名族</th><th>政治面貌</th><th>账户</th><th>任命</th></tr></thead><tbody><tr><td>'
+           +data[i]["ename"]+'</td><td>'+sex+'</td><td>'
+           +data[i]["ephone"]+'</td><td>'+data[i]["ebirth"]+'</td><td>'
+           +data[i]["enation"]+'</td><td>'+data[i]["estatus"]+'</td><td>'+data[i]["eaccout"]+
+            '</td><td><button type="button" class="btn btn-info btn-sm" value="'+data[i]["eid"]+
+            '" onclick="addEmpToDir('+data[i]["eid"]+')"><span class="glyphicon glyphicon-share-alt"></span> 任命</button></td></tr></tbody></table></div>'
+           $("#employee").append(nameEmplement);
+       }
+      }
+    }
+  })
+}
+
+function addEmpToDir (eid)
+{
+  var host = "/snprpc/payrollsystem/admin/";
+  $.ajax({
+    url:host+"1/addtodir",
+    data:{"eid":eid},
+    type:'GET', //GET
+    headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
+    dataType:'html',    //返回的数据格式：json/xml/html/script/jsonp/text
+
+    success:function(data){
+        $alert("任命成功！");
+    }
+  })
 
 }
 
@@ -207,9 +292,15 @@ function addWage (id)
 function updateWage (id)
 {
   var host = "/snprpc/payrollsystem/admin/";
+  var uid = id.toString();
+  //console.log($('#wpay1').serialize());
   $.ajax({
     url:host+id+"/wageinfo/updatewage",
-    //data:id,
+    //data:$('#wpay1').serialize(),
+    //   $('#wallowance'+uid).serialize(),
+    //   $('#wovertime'+uid).serialize(),
+    //   $('#wwithholding'+uid).serialize(),
+    // },
     type:'GET', //GET
     headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -244,13 +335,24 @@ function searchWage (id)
 function changeWage (wid)
 {
   var host = "/snprpc/payrollsystem/admin/";
+  var wpay = $('#wpay'+wid ).val();
+  var wallowance = $('#wallowance'+wid ).val();
+  var wovertime = $('#wovertime'+wid ).val();
+  var wwithholding = $('#wwithholding'+wid ).val();
+  //console.log($('#wpay'+wid).serialize());
   $.alert({
       title: '确认!',
       content: '工资表已更新！',
       confirm: function(){
           $.ajax({
             url:host+"1/wageinfo/"+wid+"/updatewage",
-            data:$('#updatewage'+wid).serialize(),
+            data:{
+              "wid":wid,
+              "wpay":wpay,
+              "wallowance":wallowance,
+              "wovertime":wovertime,
+              "wwithholding":wwithholding
+            },
             type:'GET', //GET
             headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

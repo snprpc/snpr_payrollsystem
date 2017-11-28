@@ -27,8 +27,6 @@
             </tr>
           </thead>
           @for ($i = 0; $i < $length; $i++)
-          <form class="form-inline" id="updatewage{{$wages[$i]['wid']}}" action="{{ route('wageinfo.store',['id' => 1,'wid'=>$wages[$i]['wid']]) }}" method="POST">
-          {{ csrf_field() }}
           <tbody>
             <tr>
               <td>{{ $wages[$length+$i]['ename'] }}</td>
@@ -51,7 +49,6 @@
             </tr>
           @endfor
           </tbody>
-          </form>
         </table>
       </div>
     </div>
