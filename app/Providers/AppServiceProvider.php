@@ -24,5 +24,6 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+        //$app->singleton('test', \Class\ChannelMsg::class);
     }
 }

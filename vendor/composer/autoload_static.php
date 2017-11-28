@@ -301,7 +301,10 @@ class ComposerStaticInit6bdf1329a5887e395a8ae659810a9db8
     );
 
     public static $classMap = array (
+        'App\\ChatMessage' => __DIR__ . '/../..' . '/app/ChatMessage.php',
+        'App\\Console\\Commands\\SendChatMessage' => __DIR__ . '/../..' . '/app/Console/Commands/SendChatMessage.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Events\\ChatMessageWasReceived' => __DIR__ . '/../..' . '/app/Events/ChatMessageWasReceived.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -311,6 +314,8 @@ class ComposerStaticInit6bdf1329a5887e395a8ae659810a9db8
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\DepartmentController' => __DIR__ . '/../..' . '/app/Http/Controllers/DepartmentController.php',
         'App\\Http\\Controllers\\EmployeeController' => __DIR__ . '/../..' . '/app/Http/Controllers/EmployeeController.php',
+        'App\\Http\\Controllers\\SearchController' => __DIR__ . '/../..' . '/app/Http/Controllers/SearchController.php',
+        'App\\Http\\Controllers\\WageController' => __DIR__ . '/../..' . '/app/Http/Controllers/WageController.php',
         'App\\Http\\Controllers\\admin\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/LoginController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -320,6 +325,11 @@ class ComposerStaticInit6bdf1329a5887e395a8ae659810a9db8
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Model\\Department' => __DIR__ . '/../..' . '/app/Model/Department.php',
         'App\\Model\\Employee' => __DIR__ . '/../..' . '/app/Model/Employee.php',
+        'App\\Model\\Lu\\Channel' => __DIR__ . '/../..' . '/app/Model/Lu/Channel.php',
+        'App\\Model\\Lu\\Doctor' => __DIR__ . '/../..' . '/app/Model/Lu/Doctor.php',
+        'App\\Model\\Lu\\Message' => __DIR__ . '/../..' . '/app/Model/Lu/Message.php',
+        'App\\Model\\Lu\\User' => __DIR__ . '/../..' . '/app/Model/Lu/User.php',
+        'App\\Model\\Wage' => __DIR__ . '/../..' . '/app/Model/Wage.php',
         'App\\Model\\admin\\Admin' => __DIR__ . '/../..' . '/app/Model/admin/Admin.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

@@ -1,0 +1,14 @@
+.screen
+{
+  width: auto;
+  height: 500px;
+}
+.input-board{
+  margin: 10px 20px 10px 0px;
+}
+.header
+{
+  width: 100px;
+  height:100px;
+  margin: 0;
+}

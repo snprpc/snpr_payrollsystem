@@ -6,7 +6,10 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\ChatMessage' => $baseDir . '/app/ChatMessage.php',
+    'App\\Console\\Commands\\SendChatMessage' => $baseDir . '/app/Console/Commands/SendChatMessage.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
+    'App\\Events\\ChatMessageWasReceived' => $baseDir . '/app/Events/ChatMessageWasReceived.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\AdminController' => $baseDir . '/app/Http/Controllers/AdminController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -16,6 +19,8 @@ return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\DepartmentController' => $baseDir . '/app/Http/Controllers/DepartmentController.php',
     'App\\Http\\Controllers\\EmployeeController' => $baseDir . '/app/Http/Controllers/EmployeeController.php',
+    'App\\Http\\Controllers\\SearchController' => $baseDir . '/app/Http/Controllers/SearchController.php',
+    'App\\Http\\Controllers\\WageController' => $baseDir . '/app/Http/Controllers/WageController.php',
     'App\\Http\\Controllers\\admin\\LoginController' => $baseDir . '/app/Http/Controllers/admin/LoginController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
@@ -25,6 +30,11 @@ return array(
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Model\\Department' => $baseDir . '/app/Model/Department.php',
     'App\\Model\\Employee' => $baseDir . '/app/Model/Employee.php',
+    'App\\Model\\Lu\\Channel' => $baseDir . '/app/Model/Lu/Channel.php',
+    'App\\Model\\Lu\\Doctor' => $baseDir . '/app/Model/Lu/Doctor.php',
+    'App\\Model\\Lu\\Message' => $baseDir . '/app/Model/Lu/Message.php',
+    'App\\Model\\Lu\\User' => $baseDir . '/app/Model/Lu/User.php',
+    'App\\Model\\Wage' => $baseDir . '/app/Model/Wage.php',
     'App\\Model\\admin\\Admin' => $baseDir . '/app/Model/admin/Admin.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',

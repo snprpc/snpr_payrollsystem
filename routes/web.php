@@ -28,3 +28,8 @@ Route::get('snprpc/payrollsystem/admin/{id}/wageinfo/{wid}/updatewage', 'WageCon
 Route::get('snprpc/payrollsystem/admin/{id}/search/wage', 'SearchController@wageIndex')->name('serch_wage');
 Route::get('snprpc/payrollsystem/admin/{id}/search/wagebyname', 'SearchController@namewage')->name('name_serch_wage');
 Route::get('snprpc/payrollsystem/admin/{id}/search/wagebypay', 'SearchController@paywage')->name('pay_serch_wage');
+
+Route::get('snprpc/lu/chat/{uid}', 'Lu\ChatController@index')->name('chat_index');
+Route::get('snprpc/lu/chat/{uid}/store', 'Lu\ChatController@store')->name('chat_store');
+
+Route::get('snprpc/lu/chat/{uid}/recdocmsg', 'Lu\ChatController@userCometHandle');
