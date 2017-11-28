@@ -40,7 +40,7 @@
                     </ul>
                 </li>
                 <li class="sub-menu">
-                    <a href="#"  onclick="wageManage({{$admin->aid}})">
+                    <a href="#" >
                         <i class="fa fa-desktop"></i>
                         <span>工资信息</span>
                     </a>
@@ -86,8 +86,7 @@
               <img src="/pic/login_background.jpg" alt="">
             </div>
             <h1>欢迎使用snpr工资管理系统！</h1>
-            <p>最近登陆时间&nbsp;&nbsp;&nbsp;变量最近登录时间.登陆Ip&nbsp;&bnsp;&nbsp;变量最近Ip</p>
-            <p>本次登陆Ip</p>
+
           </div>
         </div>
       </section>
