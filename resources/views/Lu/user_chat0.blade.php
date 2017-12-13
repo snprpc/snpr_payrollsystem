@@ -6,30 +6,27 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/jquery-confirm.css">
     <link rel="stylesheet" href="/css/lu/chat.css">
-
     <title>用户咨询界面</title>
   </head>
-
   <body>
-      <h2>用户咨询</h2>
-
-
+    <div class="panel panel-default">
+      <div class="panel-heading">
+          <h3 class="panel-title">
+              用户咨询界面
+          </h3>
+      </div>
+      <div class="panel-body">
         <div id="chat_screen" class="screen">
-          <div class="media media-me">
+          <div class="media">
+            <div class="media-body">
+              <h4 class="media-heading">我</h4>
+              内容
+            </div>
             <a href="#" class="media-left">
-              <img class="img-circle header media-object" src="/pic/doctor.jpg" alt="媒体对象">
+              <img class="img-rounded header media-object" src="/pic/ui_jenny.jpg" alt="媒体对象">
             </a>
-            <p>我说的话</p>
           </div>
-
-          <div class="media media-doctor">
-            <p>医生说的话</p>
-            <a href="#" class="media-left">
-              <img class="img-circle header media-object" src="/pic/ui_jenny.jpg" alt="媒体对象">
-            </a>
-          </div>        
         </div>
-
         <div class="input-board">
           <form id="user_input_table" class="user_inputinfo" action="{{ route('chat_store',['uid' => 1]) }}" method="GET">
               <input id="channel_id" type="hidden" class="form-control" name="channel_id" value="{{ $channel->channel_id }}" />
@@ -41,14 +38,14 @@
                   <button type="button" class="btn btn-primary" onclick="userSendMsg()"
                     title="警告"  data-container="body" data-toggle="popover" data-placement="top"
   			              data-content="请输入内容后再发送">
-                      <span class="glyphicon glyphicon-send"></span> &nbsp;&nbsp;发&nbsp;&nbsp;&nbsp;送&nbsp;&nbsp;
+                      <span class="glyphicon glyphicon-send"></span> 发送
                   </button>
                 </span>
               </div><!-- /input-group -->
           </form>
         </div>
-
-
+      </div>
+    </div>
     <div id="msg"></div>
 
     <script src="/js/jquery-1.8.3.min.js" charset="utf-8"></script>
