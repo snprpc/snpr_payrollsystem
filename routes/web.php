@@ -30,6 +30,11 @@ Route::get('snprpc/payrollsystem/admin/{id}/search/wage', 'SearchController@wage
 Route::get('snprpc/payrollsystem/admin/{id}/search/wagebyname', 'SearchController@namewage')->name('name_serch_wage');
 Route::get('snprpc/payrollsystem/admin/{id}/search/wagebypay', 'SearchController@paywage')->name('pay_serch_wage');
 
+
+Route::get('snprpc/lu/chat/doctor1', 'Lu\ChatController@doctor')->name('chat_doctor');
+Route::get('snprpc/lu/chat/doctor1/recusrmsg', 'Lu\ChatController@doctorCometHandle');
+Route::get('snprpc/lu/chat/doctor1/store', 'Lu\ChatController@doctorStore')->name('doctor_store');
+
 Route::get('snprpc/lu/chat/{uid}', 'Lu\ChatController@index')->name('chat_index');
 Route::get('snprpc/lu/chat/{uid}/store', 'Lu\ChatController@store')->name('chat_store');
 
